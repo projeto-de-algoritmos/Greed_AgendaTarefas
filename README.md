@@ -1,4 +1,4 @@
-# Grafos2_TopologiaRedesBrasil
+# Greed_AgendaTarefas
 
 **Conteúdo da Disciplina**: Greed<br>
 
