@@ -22,7 +22,7 @@ class TelaAgenda:
             [sg.Text('Tempo estimado para conclusão em dias:'),
              sg.Input(key='-Estimativa-', size=(3, 1))],
             [sg.Button('Adicionar'), sg.Button('Excluir')],
-            [sg.Button('Limpar'), sg.Exit('Concluir', pad=(12, 3))]
+            [sg.Exit('Concluir')]
         ]
 
         self.window = sg.Window('Agenda de Entregas', layout, finalize=True)
@@ -34,13 +34,13 @@ class TelaAgenda:
         i = 0
         for nomes in self.trabalhos:
             if self.trabalhos != []:
-                self.delecoes.append(self.trabalhos[i][0])
+                self.delecoes.append(self.trabalhos[i].get_name())
             i = i+1
 
     def deleta_Trabalhos(self, deletado):
         i = 0
         for cnt in self.trabalhos:
-            if self.trabalhos[i].get_name == deletado:
+            if self.trabalhos[i].get_name() == deletado:
                 self.trabalhos.pop(i)
             i = i+1
 
@@ -51,7 +51,7 @@ class TelaAgenda:
         layoutExclui = [
             [sg.Text("Trabalho a ser excluido:"), sg.Combo(
                 self.delecoes, size=(20, 5), enable_events=True, key='-BtnExcluir-')],
-            [sg.Exit('Concluir')]
+            [sg.Exit('Concluir'), sg.Exit('Cancelar')]
         ]
 
         self.windowBtn = sg.Window('nova Janela', layoutExclui, finalize=True)
@@ -61,9 +61,13 @@ class TelaAgenda:
 
             self.eventBtn, self.valuesBtn = self.windowBtn.read()
 
-            if self.eventBtn in (sg.WIN_CLOSED, 'Concluir'):
+            if self.eventBtn in (sg.WIN_CLOSED, 'Cancelar'):
+                break
+            elif self.eventBtn == 'Concluir':
                 self.deletado = self.valuesBtn['-BtnExcluir-']
                 self.deleta_Trabalhos(self.deletado)
+                sg.popup(
+                        'Trabalho excluido com sucesso!')
                 break
             elif self.eventBtn == "-BtnExcluir-KEY DOWN":
                 self.windowBtn['-BtnExcluir-'].Widget.event_generate('<Down>')
@@ -71,7 +75,7 @@ class TelaAgenda:
         self.windowBtn.close()
 
     def desenhar_Janela(self):
-        flag = 1
+        
         keys_to_clear = ['-InputNome-', '-Calendar-', '-Estimativa-']
         while True:
             # print(self.values['-Calendar-'])
@@ -81,7 +85,7 @@ class TelaAgenda:
 
             if self.event in (sg.WIN_CLOSED, 'Concluir'):
                 break
-            elif flag == 1 and self.event == 'Adicionar':
+            elif self.event == 'Adicionar':
                 # parse date in YYYY-MM-DD format to datetime object
                 deadline = self.values['-Calendar-']
                 deadline = datetime.strptime(deadline, '%d-%m-%Y')
@@ -89,12 +93,9 @@ class TelaAgenda:
                     self.values['-Estimativa-']), name=self.values['-InputNome-'])
                 self.trabalhos.append(event)
                 sg.popup(
-                    'Trabalho Adicionado. Não esqueca de limpar para adicionar um novo')
-                flag = 0
-            elif flag == 0 and self.event == 'Limpar':
+                    'Trabalho Adicionado!')
                 for keys in keys_to_clear:
                     self.window[keys]('')
-                flag = 1
             elif self.event == 'Excluir':
                 print(self.trabalhos)
                 if self.trabalhos == []:
