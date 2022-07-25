@@ -28,7 +28,9 @@ O usuário irá registrar as tarefas com o nome, prazo de entrega e tempo estima
 ![adicionar5](screenshots/calendario.png)
 
 ## Video
-Em breve
+- Disponível para download na pasta video
+
+- Disponível no [YouTube](https://youtu.be/c5b0xakpRyA)
 
 ## Instalação 
 ```sh
