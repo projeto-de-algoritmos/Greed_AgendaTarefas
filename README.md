@@ -52,6 +52,7 @@ pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-
 
 ## Uso 
 * Logar no email disponível no arquivo credenciais.txt
-* python main.py
+* Entrar na pasta ./Greed_AgendaTarefas no terminal
+* Escrever no terminal: python main.py
 
 
