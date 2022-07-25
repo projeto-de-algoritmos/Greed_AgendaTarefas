@@ -16,7 +16,15 @@ O usuário irá registrar as tarefas com o nome, prazo de entrega e tempo estima
 
 
 ## Screenshots
-Em breve
+![adicionar](screenshots/MenuPrincipal.png.png)
+
+![adicionar2](screenshots/Adicionar.png.png)
+
+![adicionar3](screenshots/Excluir.png.png)
+
+![adicionar4](screenshots/Terminal.png.png)
+
+![adicionar5](screenshots/calendario.png.png)
 
 ## Video
 Em breve
