@@ -11,8 +11,9 @@
 ## Sobre 
 Usar o algoritimo de "Scheduling to Minimize Lateness", que é um algoritmo ambicioso, para organizar as entregas de trabalho de um estudante. 
 
-O usuário irá registrar os prazos de seus trabalhos, com data de início e fim,  e o algorítimo 
-vai oganizar de maneira ótima a agenda de entregas.
+O usuário irá registrar as tarefas com o nome, prazo de entrega e tempo estimado de entrega. O algorítimo vai oganizar de maneira ótima a agenda de entregas e irá agendá-las no seu calendário do Google Calendar usando sua API.
+
+
 
 ## Screenshots
 Em breve
@@ -21,13 +22,25 @@ Em breve
 Em breve
 
 ## Instalação 
-Em breve
+```sh
+pip install PySimpleGUI 
+```
+
+```sh 
+pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib 
+```
 
 **Linguagem**: Python3 <br>
-**Bibliotecas**: Em breve<br>
+**Bibliotecas**: 
+- PySimpleGUI; 
+- google-api-python-client;
+- google-auth-httplib2;
+- google-auth-oauthlib<br>
+
 **Pre-Requisitos**: Python 3.10.4 <br>
 
 ## Uso 
-* Em breve
+* Logar no email disponível no arquivo credenciais.txt
+* python main.py
 
 

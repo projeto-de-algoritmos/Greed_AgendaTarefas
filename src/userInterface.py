@@ -1,8 +1,6 @@
 from typing import final
-import matplotlib.pyplot as plt
 import PySimpleGUI as sg
 import os
-from sqlalchemy import null
 from event import Event
 from datetime import datetime
 # Create options for the dropdown tab
