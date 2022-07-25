@@ -4,14 +4,15 @@ import os.path
 from googleapiclient.discovery import build
 from google_auth_oauthlib.flow import InstalledAppFlow
 from google.auth.transport.requests import Request
+import sys
 
 #pip command to install google-api-python-client
 # pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib
 
 # If modifying these scopes, delete the file token.pickle.
 SCOPES = ['https://www.googleapis.com/auth/calendar']
-
-CREDENTIALS_FILE = './client_secret_753853197302-69vcmt39tvpukdblfphebpm0lcl9sce1.apps.googleusercontent.com.json'
+CREDENTIALS_FILE = os.path.join(os.path.dirname(__file__), 'client_secret_753853197302-69vcmt39tvpukdblfphebpm0lcl9sce1.apps.googleusercontent.com.json')
+# CREDENTIALS_FILE = './client_secret_753853197302-69vcmt39tvpukdblfphebpm0lcl9sce1.apps.googleusercontent.com.json'
 
 def get_calendar_service():
     creds = None
