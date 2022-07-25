@@ -16,15 +16,16 @@ O usuário irá registrar as tarefas com o nome, prazo de entrega e tempo estima
 
 
 ## Screenshots
-![adicionar](screenshots/MenuPrincipal.png.png)
-
-![adicionar2](screenshots/Adicionar.png.png)
-
-![adicionar3](screenshots/Excluir.png.png)
-
-![adicionar4](screenshots/Terminal.png.png)
-
-![adicionar5](screenshots/calendario.png.png)
+#### Menu de adicionar tarefa
+![adicionar](screenshots/MenuPrincipal.png)
+#### Adicionar tarefa
+![adicionar2](screenshots/Adicionar.png)
+#### Excluir tarefa (antes de adicionar na agenda no google)
+![adicionar3](screenshots/Excluir.png)
+#### Log das tarefas adicionadas ja em ordem
+![adicionar4](screenshots/Terminal.png)
+#### Calendario com tarefas adicionadas
+![adicionar5](screenshots/calendario.png)
 
 ## Video
 Em breve
